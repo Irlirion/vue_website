@@ -7,7 +7,7 @@ Vue.use(Router);
 export default new Router({
     mode: 'history',
     routes: [
-        {path: '/vue_website/', component: Home},
+        {path: '/', component: Home},
         {path: '/about', component: () => import('./views/About.vue')},
         {path: '/calculator', component: () => import('./views/Calculator.vue')},
         {path: '/test', component: () => import('./views/Tests.vue')},
