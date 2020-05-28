@@ -1,4 +1,4 @@
-# dl_project
+# vue_website
 
 ## Project setup
 ```
