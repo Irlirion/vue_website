@@ -5,11 +5,11 @@
         <loading :active="!loadingModelOver" :can-cancel="false" :is-full-page="true" color="#428bca"></loading>
 
         <!-- Header for component -->
-        <h1 class="header">Draw all {{getLengthNames}} classes !</h1>
+        <h2 class="header">Нарисуй все {{getLengthNames}}!</h2>
         <div class="main">
-            <label>Select your difficulty</label>
+            <label>Выбери сложность</label>
             <toggle-button
-                    :labels="{checked: 'Big', unchecked: 'Small'}"
+                    :labels="{checked: 'Много', unchecked: 'Мало'}"
                     :width="70"
                     class="toggle"
                     color="#428bca"
@@ -24,7 +24,7 @@
                     <canvas class="canvas" height="300" id="c" width="300"></canvas>
                 </b-col>
                 <b-col class="slider">
-                    <div class="slider__label">Brush width</div>
+                    <div class="slider__label">Толщина кисти</div>
                     <vue-slider
                             :interval="1"
                             :max="100"
@@ -33,11 +33,8 @@
                             v-model="brushWidth"
                     ></vue-slider>
                     <b-row class="buttons">
-                        <b-col sm="3">
-                            <button class="button__add" v-on:click="submitDrawing()">Submit</button>
-                        </b-col>
                         <b-col>
-                            <button class="button__erase" v-on:click="clearCanvas()">Clear</button>
+                            <button class="button__erase" v-on:click="clearCanvas()">Очистить</button>
                         </b-col>
                     </b-row>
                 </b-col>
@@ -47,6 +44,11 @@
         <!-- Row of buttons -->
         <b-row>
             <v-chart :options="getBar"/>
+        </b-row>
+        <b-row class="buttons">
+            <b-col>
+                <button class="button__add" v-on:click="submitDrawing()">Подтвердить</button>
+            </b-col>
         </b-row>
 
         <!-- Table of all results -->
@@ -96,11 +98,11 @@
                 coords: [], // stores all coordinates of points on drawing
                 small_ranking: {}, // stores results of submit for small model
                 big_ranking: {}, // stores results of submit for big model
-                brushWidth: 20, // stores width of brush
+                brushWidth: 10, // stores width of brush
                 toggleBigModel: false, // switch variable between small and big model
                 tableColumns: [
-                    {label: "Class", field: "class"},
-                    {label: "Submitted", field: "submitted", type: "number"}
+                    {label: "Класс", field: "class"},
+                    {label: "Подтверждено", field: "submitted", type: "number"}
                 ]
             };
         },
@@ -159,7 +161,7 @@
                  */
                 const winClass = this.getTopClassNames[0];
                 this.$toasted.show(
-                    "Your submission for '" + winClass + "' has been taken"
+                    "Класс '" + winClass + "' подтвержден"
                 );
                 if (!this.toggleBigModel) {
                     this.small_ranking[winClass] = this.small_ranking[winClass] + 1;

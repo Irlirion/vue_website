@@ -2,7 +2,7 @@
     <div>
         <b-nav tabs>
             <b-nav-item disabled><b>Тест на программиста</b></b-nav-item>
-            <b-nav-item disabled><b>{{index + 1}} из {{numtotal}}</b></b-nav-item>
+            <b-nav-item disabled v-if="index < questions.length"><b>{{index + 1}} из {{numtotal}}</b></b-nav-item>
         </b-nav>
         <b-container class="bv-example-row">
             <b-row class="justify-content-md-center text-center">
@@ -15,19 +15,19 @@
                     />
                     <div class="final" v-else>
                         <div class="big">{{numcorrect}}/{{numtotal}}</div>
-                        <p v-if="numcorrect <= 1">
+                        <p v-if="numcorrect <= 2">
                             <span class="final__bold">Гуманитарий</span><br>
                             Вы почти ничего не знаете о программировании.
                         </p>
-                        <p v-else-if="numcorrect <= 3">
+                        <p v-else-if="numcorrect <= 5">
                             <span class="final__bold">Подисчик пабликов о программировании</span><br>
                             Что-то о жизни программиста вы слышали, но вам ещё расти и расти.
                         </p>
-                        <p v-else-if="numcorrect <= 9">
+                        <p v-else-if="numcorrect <= 10">
                             <span class="final__bold">Джун</span><br>
                             Да, вы программист, но пока что только начинающий.
                         </p>
-                        <p v-else-if="numcorrect <= 11">
+                        <p v-else-if="numcorrect === 11">
                             <span class="final__bold">Программист</span><br>
                             Всего одна ошибка. По другому и быть не могло.
                         </p>
