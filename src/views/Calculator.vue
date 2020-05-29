@@ -129,9 +129,17 @@
         border: 1px solid #999;
     }
 
+    .btn:active {
+        background-color: #dedede;
+    }
+
     .operator {
         background-color: orange;
         color: white;
+    }
+
+    .operator:active {
+        background-color: #eb8d00;
     }
 
     .back {
