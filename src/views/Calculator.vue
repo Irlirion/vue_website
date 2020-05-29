@@ -91,11 +91,13 @@
                 this.setPrevious();
             },
             equal() {
-                this.current = `${this.operator(
-                    parseFloat(this.previous),
-                    parseFloat(this.current)
-                )}`;
-                this.previous = null;
+                if (!this.operatorClicked) {
+                    this.current = `${this.operator(
+                        parseFloat(this.previous),
+                        parseFloat(this.current)
+                    )}`;
+                    this.setPrevious();
+                }
             }
         }
     }
