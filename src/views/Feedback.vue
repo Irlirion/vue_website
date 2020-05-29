@@ -90,7 +90,7 @@
                         }
                     ]
                 };
-                webhook("", data);
+                webhook("https://irlirion.requestcatcher.com/", data);
                 this.showAlert();
                 this.user_name = "";
                 this.user_email = "";
