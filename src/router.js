@@ -13,5 +13,6 @@ export default new Router({
         {path: '/test', component: () => import('./views/Tests.vue')},
         {path: '/cv', component: () => import('./views/ComputerVision.vue')},
         {path: '/feedback', component: () => import('./views/Feedback.vue')},
+        {path: '/map', component: () => import('./views/Map.vue')},
     ]
 })

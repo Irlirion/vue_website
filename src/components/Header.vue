@@ -5,6 +5,7 @@
             <b-navbar-brand to="/">Григорьев Ростислав</b-navbar-brand>
             <b-collapse id="nav-collapse" is-nav>
                 <b-navbar-nav class="ml-auto">
+                    <b-nav-item to="/map">Карта</b-nav-item>
                     <b-nav-item to="/calculator">Калькулятор</b-nav-item>
                     <b-nav-item to="/test">Тест</b-nav-item>
                     <b-nav-item to="/cv">Компьютерное зрение</b-nav-item>
